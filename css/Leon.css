@@ -1,6 +1,6 @@
 /* Start Variables */
 :root {
-    --main-color: #10cab7;
+    --main-color: rgb(16, 202, 183);
     --secondary-color: #2c4755;
     --section-padding: 60px;
     --section-background: #F6F6F6;
@@ -174,11 +174,23 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 }
-.Features i {
-}
 .Features .feat {
     padding: 20px;
     text-align: center;
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
+}
+.Features .feat:hover {
+    transform: scale(1.05,1.05);
+    -webkit-transform: scale(1.05,1.05);
+    -moz-transform: scale(1.05,1.05);
+    -ms-transform: scale(1.05,1.05);
+    -o-transform: scale(1.05,1.05);
+    box-shadow: 4px 4px 60px 0px rgb(0 0 0 / 10%),
+                1px 1px 15px rgb(0 0 0 / 8%);
 }
 .Features .feat i {
     font-size: 50px;
@@ -229,7 +241,17 @@ body {
 }
 .Services .services-content .srv {
     display: flex;
-    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid white;
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
+}
+.Services .services-content .srv:hover {
+    box-shadow: 4px 4px 60px 0px rgb(16 202 183 / 20%),
+                1px 1px 15px rgb(16 202 183 / 40%);
 }
 @media (max-width: 767px) {
     .Services .services-content .srv {
@@ -290,6 +312,24 @@ body {
 }
 .portofolio .portofolio-content .card {
     background-color: white;
+    position: relative;
+}
+.portofolio .portofolio-content .card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(255 255 255 / 20%);
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
+}
+.portofolio .portofolio-content .card:hover::after {
+    background-color: rgb(255 255 255 / 0%);
 }
 .portofolio .portofolio-content .card img {
     max-width: 100%;
@@ -444,7 +484,8 @@ body {
     text-align: center;
     font-size: 18px;
 }
-.footer span {
+.footer a {
+    text-decoration: none;
     color: var(--main-color);
     font-weight: bold;
 }
